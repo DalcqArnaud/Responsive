@@ -1,0 +1,102 @@
+body{
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.textContainer{
+    display: grid;
+}
+
+@media screen and (min-width: 768px){
+    body{
+        background-color: blue;
+    }
+    #small{
+        display: none;
+    }
+    #medium{
+        display: none;
+    }
+    .textContainer{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+    }
+    .firstText{
+        grid-column: 1 / 2;
+    }
+    .secondText{
+        grid-column: 2 / 3;
+    }
+    .thirdText{
+        grid-column: 3 / 4;
+    }
+    h1{
+        font-size: 300%;
+    }
+    p{
+        font-size: 150%;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px){
+    body{
+        background-color: green;
+    }
+    #small{
+        display: none;
+    }
+    #large{
+        display: none;
+    }
+    .textContainer{
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 10px;
+    }
+    .firstText{
+        grid-column: 1 / 2;
+        grid-row: 1 / 1
+    }
+    .secondText{
+        grid-column: 2 / 2;
+        grid-row: 1 / 1;
+    }
+    .thirdText{
+        grid-column: 1 / span 3;
+        grid-row: 2 / 2;
+    }
+    h1{
+        font-size: 250%;
+    }
+    p{
+        font-size: 125%;
+    }
+}
+
+@media screen and (max-width: 300px){
+    body{
+        background-color: red;
+    }
+    #medium{
+        display: none;
+    }
+    #large{
+        display: none;
+    }
+    .textContainer{
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    h1{
+        font-size: 200%;
+    }
+    p{
+        font-size: 100%;
+    }
+}
